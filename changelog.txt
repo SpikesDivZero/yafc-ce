@@ -23,6 +23,7 @@ Version: 2.20.0-hotfix1
 Date:
     Features:
     Fixes:
+        - Define LuaHelpers.stage (added in 2.1) as "prototype"
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0
 Date: 17 July 2026
