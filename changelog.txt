@@ -23,7 +23,8 @@ Version: 2.20.0-hotfix1
 Date:
     Features:
     Fixes:
-        - Define LuaHelpers.stage (added in 2.1) as "prototype"
+        - Define LuaHelpers.stage (added in 2.1) as "prototype" (#689)
+	- Enable Krastorio2 biomass by default for Space Exploration compatibility (#696)
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0
 Date: 17 July 2026
