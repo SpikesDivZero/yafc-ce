@@ -19,7 +19,7 @@
 //         Changes to the code that do not affect the behavior of the program.
 
 ----------------------------------------------------------------------------------------------------------------------
-Version:
+Version: 2.20.0-hotfix1
 Date:
     Features:
     Fixes:
