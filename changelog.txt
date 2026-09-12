@@ -19,17 +19,16 @@
 //         Changes to the code that do not affect the behavior of the program.
 
 ----------------------------------------------------------------------------------------------------------------------
-Version:
-Date:
+Version: 2.20.0.2
+Date: 11 September 2026
     Fixes:
         - A mod's recommended dependencies are now correctly treated as optional (#702)
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0.1
-Date:
-    Features:
+Date: 11 September 2026
     Fixes:
         - Define LuaHelpers.stage (added in 2.1) as "prototype" (#689)
-	- Enable Krastorio2 biomass by default for Space Exploration compatibility (#696)
+        - Enable Krastorio2 biomass by default for Space Exploration compatibility (#696)
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0
 Date: 17 July 2026
