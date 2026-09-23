@@ -591,7 +591,12 @@ internal partial class FactorioDataDeserializer {
             item.fuelValue = ParseEnergy(fuelValue);
             item.fuelResult = GetRef<Item>(table, "burnt_result");
 
-            if (table.Get("fuel_category", out string? category)) {
+            // In Factorio 2.1.20, this was renamed and made into an array.
+            if (table.Get("fuel_categories", out LuaTable? categories)) {
+                foreach (string category in categories.ArrayElements<string>()) {
+                    fuels.Add(category, item);
+                }
+            } else if (table.Get("fuel_category", out string? category)) {
                 fuels.Add(category, item);
             }
         }
