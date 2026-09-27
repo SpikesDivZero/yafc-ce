@@ -449,6 +449,11 @@ public static partial class FactorioDataSource {
                 }
             }
             modPackDataHash.Append(Encoding.UTF8.GetBytes(locale));
+            // The following flags change the parsed data
+            if (factorioVersion < FactorioDataDeserializer.v2_0) {
+                modPackDataHash.Append(BitConverter.GetBytes(expensive));
+            }
+            modPackDataHash.Append(BitConverter.GetBytes(netProduction));
 
             Task? renderTask = null;
             ProgressForwarder<(string, string)> renderProgress = new();
