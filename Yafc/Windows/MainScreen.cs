@@ -55,7 +55,7 @@ public partial class MainScreen : WindowMain, IKeyboardFocus, IProgress<(string,
         tabBar = new MainScreenTabBar(this);
         allPages = new VirtualScrollList<ProjectPage>(30, new Vector2(float.PositiveInfinity, 2f), BuildPage, collapsible: true);
 
-        Create(LSs.FullNameWithVersion.L(YafcLib.version.ToString(3)), display, Preferences.Instance.initialMainScreenWidth,
+        Create(LSs.FullNameWithVersion.L(YafcLib.displayVersion), display, Preferences.Instance.initialMainScreenWidth,
             Preferences.Instance.initialMainScreenHeight, Preferences.Instance.maximizeMainScreen);
         SetProject(project);
 
@@ -488,7 +488,7 @@ public partial class MainScreen : WindowMain, IKeyboardFocus, IProgress<(string,
         var projectName = string.IsNullOrEmpty(project.attachedFileName)
             ? LSs.UntitledProject
             : (unsavedChanges ? "*" : string.Empty) + Path.GetFileNameWithoutExtension(project.attachedFileName);
-        SetWindowTitle($"{projectName} - {LSs.FullNameWithVersion.L(YafcLib.version.ToString(3))}");
+        SetWindowTitle($"{projectName} - {LSs.FullNameWithVersion.L(YafcLib.displayVersion)}");
     }
 
     private async Task<bool> ConfirmUnsavedChanges() {

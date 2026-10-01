@@ -61,7 +61,7 @@ public static class Program {
         ProjectDefinition? cliProject = CommandLineParser.ParseArgs(args);
 
         if (CommandLineParser.errorOccured || CommandLineParser.helpRequested) {
-            Console.WriteLine(LSs.YafcWithVersion.L(YafcLib.version.ToString(3)));
+            Console.WriteLine(LSs.YafcWithVersion.L(YafcLib.displayVersion));
             Console.WriteLine();
 
             if (CommandLineParser.errorOccured) {

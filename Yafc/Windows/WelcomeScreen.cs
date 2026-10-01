@@ -138,7 +138,7 @@ public class WelcomeScreen : WindowUtility, IProgress<(string, string)>, IKeyboa
         recentProjectScroll = new ScrollArea(20f, BuildRecentProjectList, collapsible: true);
         languageScroll = new ScrollArea(20f, LanguageSelection, collapsible: true);
         errorScroll = new ScrollArea(20f, BuildRedErrorPanel, collapsible: true);
-        Create(LSs.Welcome.L(YafcLib.version.ToString(3)), 45, null);
+        Create(LSs.Welcome.L(YafcLib.displayVersion), 45, null);
 
         if (cliProject != null && !string.IsNullOrEmpty(cliProject.dataPath)) {
             SetProject(cliProject);

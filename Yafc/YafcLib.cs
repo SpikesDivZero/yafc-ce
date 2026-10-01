@@ -17,6 +17,7 @@ public static class YafcLib {
     private static readonly ILogger logger = Logging.GetLogger(typeof(YafcLib));
     internal static Version version { get; private set; }
     internal static string initialWorkDir { get; private set; }
+    internal static string displayVersion { get; private set; }
 
     static YafcLib() {
         initialWorkDir = Directory.GetCurrentDirectory();
@@ -24,6 +25,7 @@ public static class YafcLib {
         Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
         var v = Assembly.GetExecutingAssembly().GetName().Version!;
         version = new Version(v.Major, v.Minor, v.Build, v.Revision);
+        displayVersion = version.ToString(v.Revision != 0 ? 4 : 3);
         Project.currentYafcVersion = version;
         if (!RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
             NativeLibrary.SetDllImportResolver(typeof(SDL).Assembly, DllResolver);
