@@ -147,13 +147,10 @@ internal partial class LuaContext : IDisposable {
     private readonly List<(string mod, string name)> fullChunkNames = [];
     private readonly Dictionary<(string mod, string name), int> required = [];
     private readonly Dictionary<(string mod, string name), byte[]> modFixes = [];
-    private readonly Version gameVersion;
 
     private static readonly ILogger logger = Logging.GetLogger<LuaContext>();
 
     public LuaContext(Version gameVersion) {
-        this.gameVersion = gameVersion;
-
         L = luaL_newstate();
         _ = luaL_openlibs(L);
 
@@ -706,10 +703,7 @@ internal partial class LuaContext : IDisposable {
         string header = LSs.ProgressExecutingModAtDataStage.L(fileName);
 
         foreach (string mod in modorder) {
-            if (this.gameVersion < FactorioDataDeserializer.v2_1) {
-                required.Clear();
-            }
-
+            required.Clear();
             FactorioDataSource.CurrentLoadingMod = mod;
             progress.Report((header, mod));
             byte[] bytes = FactorioDataSource.ReadModFile(mod, fileName);
