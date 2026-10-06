@@ -593,7 +593,8 @@ internal partial class FactorioDataDeserializer {
                 foreach (string category in categories.ArrayElements<string>()) {
                     fuels.Add(category, item);
                 }
-            } else if (table.Get("fuel_category", out string? category)) {
+            }
+            else if (table.Get("fuel_category", out string? category)) {
                 fuels.Add(category, item);
             }
         }
