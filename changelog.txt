@@ -26,6 +26,7 @@ Date:
     Fixes:
         - Correct lua require() behavior to match Factorio 2.1 changes (#703)
         - Don't reuse cached mod data after toggling the "expensive recipes" or "net production" options.
+        - Handle slash inconsistency between some zip programs (#680)
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0.3
 Date: 23 September 2026
