@@ -20,7 +20,7 @@
 
 ----------------------------------------------------------------------------------------------------------------------
 Version: 2.20.0.4
-Date:
+Date: 2026-10-06
     Changes:
         - Show the revision in the title bar, when non-zero. (Making hotfix versions easier to identify.)
     Fixes:
